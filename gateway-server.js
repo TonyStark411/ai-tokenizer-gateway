@@ -61,3 +61,6 @@ app.get('/api/models', (req, res) => {
 });
 
 app.listen(PORT, () => console.log('Gateway running on', PORT));
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "healthy", uptime: process.uptime() });
+});
